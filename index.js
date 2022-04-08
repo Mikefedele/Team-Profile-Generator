@@ -5,11 +5,11 @@ const fs = require('fs');
 
 //todo create template html template 
 //todo start questions list 
-//* are we using JS to create the cards?
+
 
 
 //*open app prompt for manager name 1st?????
-// quest for employees **.then if** a manger questions & engineer 
+// quest for employees **.then if** a manger questions & engineer .. found when function inquirer
 
 //Start with manager prompts?
 
@@ -17,13 +17,20 @@ const fs = require('fs');
 
 
 
-inquirer
-  .prompt([
+const teamMembers = [];
+var engineers = [];
+var interns = [];
+
+function questions(){ 
+  let promptInq = inquirer.createPromptModule()
+
+
+  return promptInq([
     {
       type: 'list', 
       name: 'role',
       message: 'Role on the team?',
-      choices: ["Manager", "Engineer" ,"Employee", "Intern"],
+      choices: ["Manager", "Engineer", "Intern"],
     },
     {
       type: 'input',
@@ -66,112 +73,89 @@ inquirer
         if (response.role === "Intern")
         return true;
       }
+    },    
+    {
+      type: 'confirm',
+      message: "Would you like to add another employee?",
+      name: 'again',
+      
     } 
+  
+
+  ]).then(function(response) {
+    
+    if (response.role === "Engineer") {
+     engineers = engineers.push({response})
+    };
+    console.log(engineers);
+
+    if (response.role === "Intern") {
+      interns = interns.push({response})
+    };
+    console.log(interns);
+
+    if (response.again === true) {
+      questions();
+    } else {
+      console.log(response);
+    }
+  })
+}
+
+questions();
+  
+  // .then(response => {teamMembers.push(response)});
+
+  
+  // .then(response => console.log(response));
+
+
+  
+
+
+  // .then(response => console.log(response));
 
 
 
-  ]).then(response => console.log(response));
+  // .then(response => )
+
+
+//todo polymorph or constructor with an if statement? function for creating cards???
+//todo promise for asking to create new employees??
+
+//*constructor
+// function Developer(name, tech) {
+//   this.name = name;
+//   this.tech = tech;
+//   this.introduction = () => 
+//     console.log(`"Hi, my name is ${name} and I love ${tech}"`);
+  
+// }
+
+// const me = new Developer('Mike', 'Javascript');
+// me.introduction();
+
+
+
+//*polymorph
+  // const OverloadDemo = function () {
+  //   this.area = function (x, y) {
+  //     console.log('x = ', x);
+  //     if (!y) {
+  //       console.log('y is not provided');
+  //       return `\nThe area of the square is ${Math.pow(x, 2)} sq units`;
+  //     }
+  //     console.log('y = ', y);
+  //     return `\nThe area of the rectangle is ${x * y} sq units`;
+  //   };
+  // };
+
+
+
 
 // .then((response) => { 
     
-//     switch (response.role) {
-//   case role[0]:
-//     inquirer
-//     .prompt([
-//       {
-//         type: 'input',
-//         message: "Enter office number",
-//         name: 'officeNumb',
-//       } 
-//     ])
-//     break;
 
-//   case role[1]:  
-//   inquirer
-//   .prompt([
-//     {
-//       type: 'input',
-//       message: "What is your Github username?",
-//       name: 'gitName',
-//     } 
-//   ])
-//   break;
-
-//   case role[2]:
-//     inquirer
-//   .prompt([
-//     {
-//       type: 'input',
-//       message: "Where do you go to school?",
-//       name: 'school',
-//     } 
-//   ])
-//     break;
-
-// }} 
-// ).then(response => console.log(response));
-  
-
-  // .then(response => writeToFile("", response));
-
-// const roleSwitch = response.role
-
-// switch (response.role) {
-//   case Manager:
-//     inquirer
-//     .prompt([
-//       {
-//         type: 'input',
-//         message: "Enter office number",
-//         name: 'officeNumb',
-//       } 
-//     ])
-//     break;
-
-//   case Engineer:  
-//   inquirer
-//   .prompt([
-//     {
-//       type: 'input',
-//       message: "What is your Github username?",
-//       name: 'gitName',
-//     } 
-//   ])
-//   break;
-
-//   case Intern:
-//     inquirer
-//   .prompt([
-    // {
-    //   type: 'input',
-    //   message: "Where do you go to school?",
-    //   name: 'school',
-    // } 
-//   ])
-//     break;
-
-// }
-
-
-//   if (response.role == Manager) {
-//     inquirer
-//       .prompt([
-//         {
-//           type: 'input',
-//           message: "Enter office number",
-//           name: 'officeNumb',
-//         } 
-
-//     ])
-//   } else if () {
-
-//   }
-
-// if (condition) {
-  
-// } else  {
-  
-// }
 
 
   //*THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
