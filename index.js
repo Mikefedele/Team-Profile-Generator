@@ -1,6 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
 
 
 //todo create template html template 
@@ -85,7 +87,7 @@ function questions(){
   ]).then(function(response) {
     //*MAYBE CALL IN A FUNCTION TO DO ALL OF THE LOGIC CREATING VAR NAMING 
     if (response.role === "Engineer") {
-     engineers = engineers[response]
+     const engineers = New Engineer ((resp))
     };
     console.log(engineers);
 

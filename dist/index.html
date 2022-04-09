@@ -12,17 +12,15 @@
   <body>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h1 class="display-4">Team Profile</h1>
-        
+        <h1 class="display-4">Team Profile</h1>        
       </div>
     </div>
 
     <main> 
       <div class="container">        
-        <div class="card-deck" id="managers"></div>
-        <div class="card-deck" id="engineers"></div>
-        <div class="card-deck" id="employees"></div>
-        <div class="card-deck" id="interns"></div>
+        <div class="card-deck" id="managers">${buildManager()}</div>
+        <div class="card-deck" id="engineers">${buildEngineer()}${buildIntern()}</div>
+        <!-- <div class="card-deck" id="interns"></div> -->
 
       </div>
 
