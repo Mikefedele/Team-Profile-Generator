@@ -83,14 +83,14 @@ function questions(){
   
 
   ]).then(function(response) {
-    
+    //*MAYBE CALL IN A FUNCTION TO DO ALL OF THE LOGIC CREATING VAR NAMING 
     if (response.role === "Engineer") {
-     engineers = engineers.push({response})
+     engineers = engineers[response]
     };
     console.log(engineers);
 
     if (response.role === "Intern") {
-      interns = interns.push({response})
+      interns = interns({response})
     };
     console.log(interns);
 
@@ -100,7 +100,7 @@ function questions(){
       console.log(response);
     }
   })
-}
+}.the
 
 questions();
   
@@ -109,8 +109,16 @@ questions();
   
   // .then(response => console.log(response));
 
-
+// if (condition) {
   
+// } else {
+  
+// }
+//   else if (condition) {
+    
+//   } else {
+    
+//   }
 
 
   // .then(response => console.log(response));
