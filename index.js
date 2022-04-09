@@ -3,6 +3,8 @@ const fs = require('fs');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
+const Employee = require('./lib/employee');
+const { log } = require('console');
 
 
 //todo create template html template 
@@ -19,9 +21,14 @@ const Intern = require('./lib/intern');
 
 
 
-const teamMembers = [];
-var engineers = [];
-var interns = [];
+
+
+
+
+
+const employeeArray = [];
+var engineerArray = [];
+var internArray = [];
 
 function questions(){ 
   let promptInq = inquirer.createPromptModule()
@@ -85,16 +92,27 @@ function questions(){
   
 
   ]).then(function(response) {
+    
     //*MAYBE CALL IN A FUNCTION TO DO ALL OF THE LOGIC CREATING VAR NAMING 
+    // let {name, id, email, role} = new Employee(name, id, email, role)
+    const allEmployees = new Employee(response.name, response.id, response.email, response.role)
+console.log(allEmployees);
+employeeArray.push(allEmployees);
+console.log(employeeArray);
+
     if (response.role === "Engineer") {
-     const engineers = New Engineer ((resp))
+      const engine = new Engineer(response.name, response.id, response.email, response.role, response.gitName)
+          console.log(engine);
+        engineerArray.push(engine);
+        console.log(engineerArray);
     };
-    console.log(engineers);
 
     if (response.role === "Intern") {
-      interns = interns({response})
+      const int = new Intern(response.name, response.id, response.email, response.role, response.school);
+   
+   
     };
-    console.log(interns);
+    
 
     if (response.again === true) {
       questions();
@@ -102,9 +120,10 @@ function questions(){
       console.log(response);
     }
   })
-}.the
+}
 
 questions();
+// console.log(Employee);
   
   // .then(response => {teamMembers.push(response)});
 
