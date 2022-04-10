@@ -1,0 +1,26 @@
+#teamProfile {
+font-size: 3.5rem;
+color: white;
+font-weight: bold;
+justify-content: center;
+text-align: center
+
+};
+
+#header {
+  background-color: pink;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+};
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-header {
+  background-color: blue;
+  color: white;
+  font-size: large;
+}

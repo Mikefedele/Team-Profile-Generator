@@ -18,18 +18,20 @@ module.exports = function(arr1, arr2, arr3) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />  
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> 
-      <link rel="stylesheet" href="./assets/style.css"/>
+      <link rel="stylesheet" href="./dist/style.css"/>
+
       <title>Team Profile</title>
     </head>
   
     <body>
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">Team Profile</h1>        
-        </div>
+      <div class="jumbotron jumbotron-fluid text-center" style="background-color: pink;" id="header">
+        <h1 class="display-4" id="teamProfile">Team Profile</h1>        
       </div>
+
       <div class = "container d-flex">
+        <div class = "row row-cols-3">
       ${insertCards(arr1, arr2, arr3)}
+        </div>
      </div>
     </body>
   
