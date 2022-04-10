@@ -27,8 +27,9 @@ const { log } = require('console');
 
 
 const employeeArray = [];
-var engineerArray = [];
-var internArray = [];
+const engineerArray = [];
+const internArray = [];
+const managerArray = [];
 
 function questions(){ 
   let promptInq = inquirer.createPromptModule()
@@ -109,17 +110,27 @@ console.log(employeeArray);
 
     if (response.role === "Intern") {
       const int = new Intern(response.name, response.id, response.email, response.role, response.school);
-   
+   internArray.push(int);
+   console.log(internArray);
    
     };
-    
+
+    if (response.role === "Manager") {
+      const mng = new Manager(response.name, response.id, response.email, response.role, response.officeNumb);
+   managerArray.push(mng);
+   console.log(managerArray);
+   
+    };
 
     if (response.again === true) {
       questions();
     } else {
       console.log(response);
+      //call function to generate cards here & do it all at once 
     }
   })
+
+  
 }
 
 questions();
