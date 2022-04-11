@@ -1,13 +1,17 @@
 const Employee = require('../lib/employee');
-const employjs = require('../lib/employee')
 
 describe ('Employee', () => {
-it("should contain a name", () => 
-this.name = "mike",
-expect(getName()).toEqual("mike")
-)
+  it('should creaate new employee', () => {
+const employ = new Employee ("john", "11", "john@john", "engineer")
+
+expect(employ.name).toEqual("john");
 
 })
+})
+// expect(getName()).toEqual("")
+
+
+
 
 
 // test('employee should include (name, id, email, role)', () => {

@@ -29,7 +29,7 @@ module.exports = function(arr1, arr2, arr3) {
       </div>
 
       <div class = "container d-flex">
-        <div class = "row row-cols-3">
+        <div class = "row row-cols-3 cardRows">
       ${insertCards(arr1, arr2, arr3)}
         </div>
      </div>

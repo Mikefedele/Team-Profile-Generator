@@ -1,11 +1,8 @@
-const Employee = require("../lib/employee");
 const Engineer = require("../lib/engineer");
 
-describe("Engineer", () => {
-  it("should be a sublclass of Employee", () =>{
-    const engine = new Engineer("github/mike");
-    
-
-    expect(emgine.name).toEqual("github/mike");
-  })
-});         
+describe("getgitName", () => {
+  const engineer = new Engineer('rufus', '420', 'ru@fus.com', 'engineer', 'rufusGit');
+  it('should return the engineer gitName', () => {
+    expect(engineer.getgitName()).toEqual ('rufusgit')
+  }) 
+} )  
