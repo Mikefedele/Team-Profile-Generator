@@ -10,16 +10,17 @@ const path = require("path")
 const buildHTML = require("./src")
 //todo create template html template
 //todo start questions list
-//*open app prompt for manager name 1st?????
+
 // quest for employees **.then if** a manger questions & engineer .. found when function inquirer
 
 //Start with manager prompts?
-
+//*need a way to store each response employeeArray not really needed
 const employeeArray = [];
 const engineerArray = [];
 const internArray = [];
 const managerArray = [];
 
+//*wrap inquirer in func to call again 
 function questions() {
   let promptInq = inquirer.createPromptModule();
 
@@ -86,7 +87,7 @@ function questions() {
     console.log(allEmployees);
     employeeArray.push(allEmployees);
     console.log(employeeArray);
-//todo do i want to write to file 
+
     if (response.role === "Engineer") {
       const engine = new Engineer(
         response.name,
@@ -125,7 +126,7 @@ function questions() {
       managerArray.push(mng);
       console.log(managerArray);
     }
-
+    //path.join dirname both file descriptor __dirname or else stored in computer root call my function from src
     if (response.again === true) {
       questions();
     } else {
@@ -133,35 +134,15 @@ function questions() {
     }
   });
 }
-
+//wrapped inquirer in questions func to call again to add another 
 questions();
 
 
 
 
-// console.log(Employee);
 
-// .then(response => {teamMembers.push(response)});
 
-// .then(response => console.log(response));
 
-// if (condition) {
-
-// } else {
-
-// }
-//   else if (condition) {
-
-//   } else {
-
-//   }
-
-// .then(response => console.log(response));
-
-// .then(response => )
-
-//todo polymorph or constructor with an if statement? function for creating cards???
-//todo promise for asking to create new employees??
 
 //*constructor
 // function Developer(name, tech) {
