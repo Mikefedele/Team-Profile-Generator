@@ -15,7 +15,7 @@ An application to create a team profile with different cards depending on their 
 
 
 ## Walk-thru
-[password generator](https://watch.screencastify.com/v/314WfqUg0sipmQGy5Xwg)
+[Walk-thru video](https://watch.screencastify.com/v/r9uE6GokwyC4Xqnh4koI)
 
 ## Github
 
